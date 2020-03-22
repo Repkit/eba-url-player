@@ -1,0 +1,76 @@
+{
+    "name": "trip-microservices/url-player",
+    "description": "Microservice used for access url management that requires action , method and data with a access time interval",
+    "type": "library",
+    "license": "dcs +",
+    "keywords": [
+        "url-player",
+        "cron-manager",
+        "request-access-manager",
+        "dynapack-microservices",
+        "microice",
+        "api",
+        "apigility",
+        "microservice",
+        "trip",
+        "dynapack"
+    ],
+    "homepage": "http://dcsplus.net",
+    "support": {
+        "email": "tripsupport@dcsplus.net",
+        "source": "http://gitlab.dcs/trip-microservices/url-player.git"
+    },
+    "authors": [
+        {
+            "name": "Alexandru Florian Serban",
+            "email": "alexandru.serban@dcsplus.net",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "secure-http": false,
+        "process-timeout": 5000
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.3-dev",
+            "dev-develop": "1.4-dev"
+        }
+    },
+    "repositories": [
+        {
+            "url": "git@gitlab.dcs:trip-libraries/cron-manager.git",
+            "type": "git"
+        },
+        {
+            "url":  "git@gitlab.dcs:trip-libraries/db-filter.git",
+            "type": "git"
+        }
+    ],
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "zfcampus/zf-apigility": "~1.1",
+        "zfcampus/zf-apigility-documentation": "^1.0.5",
+        "zfcampus/zf-development-mode": "^3.0",
+        "trip-libraries/cron-manager": "dev-master",
+        "trip-libraries/db-filter": "dev-master"
+    },
+    "require-dev": {
+        "zfcampus/zf-apigility-admin": "^1.4.1",
+        "zfcampus/zf-apigility-admin-ui": "^1.2.3",
+        "zfcampus/zf-deploy": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {"MicroIceUrlPlayer\\": "src/MicroIceUrlPlayer"}
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "sh standalone.install.sh MicroIceUrlPlayer"
+        ]
+    },
+    "suggest": {
+        "zfcampus/zf-apigility-doctrine": "zfcampus/zf-apigility-doctrine ~1.0 to create Doctrine-Connected REST services",
+        "zfcampus/zf-http-cache": "zfcampus/zf-http-cache ~1.0 to add HTTP caching to your API",
+        "zfr/zfr-cors": "zfr/zfr-cors ~1.2 to add CORS support to your API"
+    }
+}

@@ -1,0 +1,22 @@
+<?php 
+
+$settings = [
+    'db' => [
+        'driver'            => 'Pdo',
+        'dsn'               => 'mysql:dbname=<your_db>;host=localhost',
+        'driver_options'    => [
+            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        ],
+        'username'          => '<your_db_username>',
+        'password'          => '<uour_db_password>'
+    ],
+    'log_path' => getcwd() . '/data',//optional - directory for cronjobs output log , for each cronjob a log file will be created with the name {md5(cronjob-action)}.log  
+    'backup_path' => getcwd() . '/data',//optional - directory for cronjobs backup , for each cronjob a backup will be created with the name {job-hash}.cjob ,default value is cwd  
+    'command_path' => getcwd() . '/data', //mandatory - directory for cronjobs command 
+];
+
+// do not edit bellow this line
+
+return [
+    'url_player_settings' => $settings,
+];

@@ -15,14 +15,14 @@ Database setup
 Dynapack integration
 --------------------
 
-+ composer require url-player or update eba's composer.json file
++ composer require trip-microservices/url-player or update dynapack's composer.json file
 + activare modul si adaugare in api/config/acl/controller.php
 
 
 Standalone
 ----------
 
-+ git clone https://github.com/Repkit/eba-url-player.git
++ git clone git@gitlab.dcs:trip-microservices/url-player.git
 + cd url-player
 + composer install
 + composer update
